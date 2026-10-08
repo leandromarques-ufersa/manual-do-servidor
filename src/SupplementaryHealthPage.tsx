@@ -41,12 +41,12 @@ export function SupplementaryHealthPage() {
           key={id} type="button" id={`assistencia-trigger-${id}`} aria-expanded={openPanel === id} aria-controls={`assistencia-panel-${id}`}
           onClick={() => setOpenPanel(openPanel === id ? null : id)}
           className="group relative flex cursor-pointer flex-col items-center rounded-lg px-2 py-3 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
-          <span className={`grid size-16 place-items-center rounded-full bg-background ${openPanel === id ? 'text-emerald-800' : 'text-teal-700'}`}>
+          <span className={`grid size-16 place-items-center rounded-full bg-background ${openPanel === id ? 'text-profile-strong' : 'text-profile-icon'}`}>
             <Icon strokeWidth={1.25} className="size-11 motion-safe:transition-transform motion-safe:group-hover:scale-110" aria-hidden="true" />
           </span>
           <span className="mt-3 text-base font-semibold">{title}</span>
           <span className="mt-2 max-w-48 text-sm leading-6 text-muted-foreground">{description}</span>
-          <ChevronDown className={`mt-3 size-4 text-teal-700 motion-safe:transition-transform ${openPanel === id ? 'rotate-180' : ''}`} aria-hidden="true" />
+          <ChevronDown className={`mt-3 size-4 text-profile-icon motion-safe:transition-transform ${openPanel === id ? 'rotate-180' : ''}`} aria-hidden="true" />
         </button>)}
       </div>
       <div id="assistencia-panel-attention" role="region" aria-labelledby="assistencia-trigger-attention" hidden={openPanel !== 'attention'} className="mt-6 text-left">

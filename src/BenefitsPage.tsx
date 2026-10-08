@@ -7,8 +7,8 @@ export const benefitTopics = [
   { id: 'assistencia', title: 'Assistência à Saúde Suplementar', description: 'Conheça as modalidades, os dependentes e os valores de contribuição.', icon: ShieldPlus },
 ]
 
-export function BenefitsPage() {
+export function BenefitsPage({ profile = 'tecnico' }: { profile?: string }) {
   return <nav aria-label="Tópicos de benefícios" className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6">
-    {benefitTopics.map(topic => <SelectionCard key={topic.id} {...topic} href={`#tecnico/beneficios/${topic.id}`} green />)}
+    {benefitTopics.map(topic => <SelectionCard key={topic.id} {...topic} href={`#${profile}/beneficios/${topic.id}`} green />)}
   </nav>
 }

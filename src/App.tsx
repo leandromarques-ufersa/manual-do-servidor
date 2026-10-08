@@ -1,3 +1,4 @@
+import { TeacherCareerPage, teacherCareerTopics } from './TeacherCareerPage'
 import { PageActions } from '@/components/PageActions'
 import { ExternalLink } from '@/components/ExternalLink'
 import { useEffect, useRef, useState } from 'react'
@@ -32,21 +33,21 @@ export default function App() {
   const firstRender = useRef(true)
   const [category, slug, topicId] = hash.slice(1).split('/')
   const profile = category === 'tecnico' ? 'tecnico' : category === 'docente' ? 'docente' : null
-  const selected = profile === 'tecnico' && slug ? secoesTecnico.find(section => sectionSlug(section.titulo) === slug) : undefined
-  const isCareerTopic = profile === 'tecnico' && slug === 'carreira' && Boolean(topicId)
-  const careerTopic = isCareerTopic ? careerTopics.find(topic => topic.id === topicId) : undefined
-  const isHealthTopic = profile === 'tecnico' && slug === 'saude' && Boolean(topicId)
+  const selected = profile && slug ? secoesTecnico.find(section => sectionSlug(section.titulo) === slug) : undefined
+  const isCareerTopic = profile && slug === 'carreira' && Boolean(topicId)
+  const careerTopic = isCareerTopic ? (profile === 'docente' ? teacherCareerTopics : careerTopics).find(topic => topic.id === topicId) : undefined
+  const isHealthTopic = profile && slug === 'saude' && Boolean(topicId)
   const healthTopic = isHealthTopic ? healthTopics.find(topic => topic.id === topicId) : undefined
-  const isBenefitTopic = profile === 'tecnico' && slug === 'beneficios' && Boolean(topicId)
+  const isBenefitTopic = profile && slug === 'beneficios' && Boolean(topicId)
   const benefitTopic = isBenefitTopic ? benefitTopics.find(topic => topic.id === topicId) : undefined
-  const missingSection = profile === 'tecnico' && Boolean(slug) && !selected
+  const missingSection = profile && Boolean(slug) && !selected
   useEffect(() => { const update = () => { setHash(location.hash) }; window.addEventListener('hashchange', update); return () => window.removeEventListener('hashchange', update) }, [])
   useEffect(() => {
     document.title = `${isBenefitTopic ? benefitTopic?.title ?? 'Tópico não encontrado' : isHealthTopic ? healthTopic?.title ?? 'Tópico não encontrado' : isCareerTopic ? careerTopic?.title ?? 'Tópico não encontrado' : selected ? selected.titulo : missingSection ? 'Seção não encontrada' : profile === 'tecnico' ? 'Guia técnico administrativo' : profile === 'docente' ? 'Guia docente' : 'Boas-vindas'} | UFERSA Angicos`
     if (!firstRender.current) { heading.current?.focus({ preventScroll: true }); window.scrollTo(0, 0) }
     firstRender.current = false
   }, [profile, selected, missingSection, isCareerTopic, careerTopic, isHealthTopic, healthTopic, isBenefitTopic, benefitTopic])
-  return <div className="flex min-h-svh flex-col">
+  return <div data-profile={profile ?? undefined} className="flex min-h-svh flex-col">
     <a className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-4" href="#conteudo">Pular para o conteúdo</a>
     <header className="border-b bg-white">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-5 sm:px-10">
@@ -70,7 +71,7 @@ export default function App() {
           <SelectionCard title="Técnico Administrativo" description="Encontre orientações sobre sua rotina, carreira, benefícios e serviços." icon={IdCard} href="#tecnico" green />
         </div>
       </section> : isBenefitTopic ? <section aria-labelledby="titulo" className="mx-auto">
-        <Button variant="ghost" size="sm" asChild className="mb-8 -ml-3 text-muted-foreground"><a href="#tecnico/beneficios"><ArrowLeft aria-hidden="true" />Voltar para Benefícios</a></Button>
+        <Button variant="ghost" size="sm" asChild className="mb-8 -ml-3 text-muted-foreground"><a href={`#${profile}/beneficios`}><ArrowLeft aria-hidden="true" />Voltar para Benefícios</a></Button>
         <p className="mb-3 text-xs font-medium tracking-widest text-muted-foreground uppercase">Benefícios</p>
         <h1 ref={heading} tabIndex={-1} id="titulo" className="text-3xl font-semibold tracking-tight sm:text-4xl">{benefitTopic?.id === 'dependentes' ? 'Inclusão de Dependentes' : benefitTopic?.title ?? 'Tópico não encontrado'}</h1>
         {benefitTopic?.id === 'dependentes' ? <DependentsPage /> : benefitTopic?.id === 'assistencia' ? <SupplementaryHealthPage /> : benefitTopic?.id === 'auxilio-transporte' ? <div className="mt-8">
@@ -78,25 +79,25 @@ export default function App() {
           <Button variant="black" asChild><ExternalLink href="https://progepe.ufersa.edu.br/como-solicitar/">Auxílio-Transporte · PROGEPE<ArrowUpRight aria-hidden="true" /></ExternalLink></Button>
         </div> : <p className="mt-5">Volte para Benefícios e escolha um tópico disponível.</p>}
       </section> : isHealthTopic ? <section aria-labelledby="titulo" className="mx-auto">
-        <Button variant="ghost" size="sm" asChild className="mb-8 -ml-3 text-muted-foreground"><a href="#tecnico/saude"><ArrowLeft aria-hidden="true" />Voltar para Saúde</a></Button>
+        <Button variant="ghost" size="sm" asChild className="mb-8 -ml-3 text-muted-foreground"><a href={`#${profile}/saude`}><ArrowLeft aria-hidden="true" />Voltar para Saúde</a></Button>
         <p className="mb-3 text-xs font-medium tracking-widest text-muted-foreground uppercase">Saúde</p>
         <h1 ref={heading} tabIndex={-1} id="titulo" className="text-3xl font-semibold tracking-tight sm:text-4xl">{healthTopic?.title ?? 'Tópico não encontrado'}</h1>
         {healthTopic?.id === 'atestados' ? <MedicalCertificatesPage /> : healthTopic?.id === 'assistencia' ? <SupplementaryHealthPage /> : healthTopic?.id === 'declaracao-de-comparecimento' ? <AttendanceDeclarationPage /> : <p className="mt-5 text-muted-foreground">{healthTopic ? 'Conteúdo em preparação.' : 'Volte para Saúde e escolha um dos tópicos disponíveis.'}</p>}
       </section> : isCareerTopic ? <section aria-labelledby="titulo" className={careerTopic && ['estagio', 'progressao', 'aceleracao', 'qualificacao'].includes(careerTopic.id) ? 'mx-auto' : 'mx-auto max-w-3xl'}>
-        <Button variant="ghost" size="sm" asChild className="mb-8 -ml-3 text-muted-foreground"><a href="#tecnico/carreira"><ArrowLeft aria-hidden="true" />Voltar para Carreira</a></Button>
+        <Button variant="ghost" size="sm" asChild className="mb-8 -ml-3 text-muted-foreground"><a href={`#${profile}/carreira`}><ArrowLeft aria-hidden="true" />Voltar para Carreira</a></Button>
         <p className="mb-3 text-xs font-medium tracking-widest text-muted-foreground uppercase">Carreira</p>
-        <h1 ref={heading} tabIndex={-1} id="titulo" className="text-3xl font-semibold tracking-tight sm:text-4xl">{careerTopic?.id === 'estagio' ? 'Estágio Probatório Técnico Administrativo' : careerTopic?.title ?? 'Tópico não encontrado'}</h1>
-        {careerTopic?.id === 'estagio' ? <ProbationPage /> : careerTopic?.id === 'progressao' ? <MeritPage /> : careerTopic?.id === 'aceleracao' ? <AccelerationPage /> : careerTopic?.id === 'qualificacao' ? <QualificationPage /> : <p className="mt-5 text-muted-foreground">{careerTopic ? 'Conteúdo em preparação.' : 'Volte para Carreira e escolha um dos tópicos disponíveis.'}</p>}
+        <h1 ref={heading} tabIndex={-1} id="titulo" className="text-3xl font-semibold tracking-tight sm:text-4xl">{profile === 'tecnico' && careerTopic?.id === 'estagio' ? 'Estágio Probatório Técnico Administrativo' : careerTopic?.title ?? 'Tópico não encontrado'}</h1>
+        {profile === 'docente' && careerTopic ? <p className="mt-8 text-lg text-muted-foreground">Estamos trabalhando nisso.</p> : careerTopic?.id === 'estagio' ? <ProbationPage /> : careerTopic?.id === 'progressao' ? <MeritPage /> : careerTopic?.id === 'aceleracao' ? <AccelerationPage /> : careerTopic?.id === 'qualificacao' ? <QualificationPage /> : <p className="mt-5 text-muted-foreground">{careerTopic ? 'Conteúdo em preparação.' : 'Volte para Carreira e escolha um dos tópicos disponíveis.'}</p>}
       </section> : selected || missingSection ? <section aria-labelledby="titulo" className={selected && ['Carreira', 'Orientações iniciais', 'Benefícios'].includes(selected.titulo) ? 'mx-auto' : 'mx-auto max-w-3xl'}>
-        <Button variant="ghost" size="sm" asChild className="mb-8 -ml-3 text-muted-foreground"><a href="#tecnico"><ArrowLeft aria-hidden="true" />Voltar ao guia técnico administrativo</a></Button>
-        <p className="mb-3 text-xs font-medium tracking-widest text-muted-foreground uppercase">Guia do servidor técnico administrativo</p>
+        <Button variant="ghost" size="sm" asChild className="mb-8 -ml-3 text-muted-foreground"><a href={`#${profile}`}><ArrowLeft aria-hidden="true" />{profile === 'docente' ? 'Voltar ao guia docente' : 'Voltar ao guia técnico administrativo'}</a></Button>
+        <p className="mb-3 text-xs font-medium tracking-widest text-muted-foreground uppercase">{profile === 'docente' ? 'Guia do servidor docente' : 'Guia do servidor técnico administrativo'}</p>
         <h1 ref={heading} tabIndex={-1} id="titulo" className="text-3xl font-semibold tracking-tight sm:text-4xl">{selected?.titulo ?? 'Seção não encontrada'}</h1>
         <p className="mt-4 mb-8 text-muted-foreground">{selected?.titulo === 'Carreira' ? 'Escolha um tópico para continuar.' : selected ? 'Consulte as opções e orientações desta seção.' : 'Volte ao guia para escolher uma das seções disponíveis.'}</p>
-        {selected?.titulo === 'Orientações iniciais' ? <InitialGuidancePage /> : selected?.titulo === 'Carreira' ? <CareerPage /> : selected?.titulo === 'Saúde' ? <HealthPage /> : selected?.titulo === 'Benefícios' ? <BenefitsPage /> : selected && <Card className="gap-0 overflow-hidden py-0"><ul className="divide-y">{selected.itens.map(([label, url]) => <li key={label}>{url ? <ExternalLink className="flex items-center justify-between gap-4 px-6 py-5 text-sm font-medium text-primary transition-colors hover:bg-muted focus-visible:-outline-offset-4" href={url}><span>{label}</span><ArrowUpRight className="size-4 shrink-0" aria-hidden="true" /></ExternalLink> : <div className="px-6 py-5"><p className="text-sm font-medium">{label}</p><p className="mt-1 text-xs text-muted-foreground">Orientações em preparação</p></div>}</li>)}</ul></Card>}
+        {profile === 'docente' && selected && ['Orientações iniciais', 'Licenças e afastamentos', 'Serviços'].includes(selected.titulo) ? <p className="mt-8 text-lg text-muted-foreground">Estamos trabalhando nisso.</p> : selected?.titulo === 'Orientações iniciais' ? <InitialGuidancePage /> : selected?.titulo === 'Carreira' ? (profile === 'docente' ? <TeacherCareerPage /> : <CareerPage />) : selected?.titulo === 'Saúde' ? <HealthPage profile={profile} /> : selected?.titulo === 'Benefícios' ? <BenefitsPage profile={profile} /> : selected && <Card className="gap-0 overflow-hidden py-0"><ul className="divide-y">{selected.itens.map(([label, url]) => <li key={label}>{url ? <ExternalLink className="flex items-center justify-between gap-4 px-6 py-5 text-sm font-medium text-primary transition-colors hover:bg-muted focus-visible:-outline-offset-4" href={url}><span>{label}</span><ArrowUpRight className="size-4 shrink-0" aria-hidden="true" /></ExternalLink> : <div className="px-6 py-5"><p className="text-sm font-medium">{label}</p><p className="mt-1 text-xs text-muted-foreground">Orientações em preparação</p></div>}</li>)}</ul></Card>}
       </section> : <section aria-labelledby="titulo">
         <Button variant="ghost" size="sm" asChild className="mb-8 -ml-3 text-muted-foreground"><a href="#perfis"><ArrowLeft aria-hidden="true" />Escolher outra categoria</a></Button>
-        <div className="mb-8"><p className="mb-3 text-xs font-medium tracking-widest text-muted-foreground uppercase">Manual do Servidor</p><h1 ref={heading} tabIndex={-1} id="titulo" className="text-3xl font-semibold tracking-tight sm:text-4xl">{profile === 'tecnico' ? 'Guia do servidor técnico administrativo' : 'Guia do servidor docente'}</h1><p className="mt-4 text-muted-foreground">{profile === 'tecnico' ? 'Escolha uma seção para encontrar suas orientações.' : 'O conteúdo deste guia está em preparação.'}</p></div>
-        {profile === 'tecnico' ? <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6">{orderedSections.map(section => <SelectionCard key={section.titulo} title={section.titulo} description={section.resumo} icon={icons[section.titulo]} href={`#tecnico/${sectionSlug(section.titulo)}`} green />)}</div> : <Card className="gap-4 p-6"><p className="text-sm text-muted-foreground">Enquanto isso, consulte os canais institucionais.</p><div className="flex flex-wrap gap-3"><Button variant="outline" asChild><ExternalLink href="https://angicos.ufersa.edu.br/">Portal do campus<ArrowUpRight aria-hidden="true" /></ExternalLink></Button><Button variant="outline" asChild><ExternalLink href="https://progepe.ufersa.edu.br/">Gestão de Pessoas<ArrowUpRight aria-hidden="true" /></ExternalLink></Button></div></Card>}
+        <div className="mb-8"><p className="mb-3 text-xs font-medium tracking-widest text-muted-foreground uppercase">Manual do Servidor</p><h1 ref={heading} tabIndex={-1} id="titulo" className="text-3xl font-semibold tracking-tight sm:text-4xl">{profile === 'tecnico' ? 'Guia do servidor técnico administrativo' : 'Guia do servidor docente'}</h1><p className="mt-4 text-muted-foreground">Escolha uma seção para encontrar suas orientações.</p></div>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6">{orderedSections.map(section => <SelectionCard key={section.titulo} title={section.titulo} description={profile === 'docente' && ['Orientações iniciais', 'Licenças e afastamentos', 'Serviços'].includes(section.titulo) ? 'Estamos trabalhando nisso.' : section.resumo} icon={icons[section.titulo]} href={`#${profile}/${sectionSlug(section.titulo)}`} green />)}</div>
       </section>}
     </main>
     </div>

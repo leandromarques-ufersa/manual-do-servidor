@@ -30,12 +30,12 @@ export function QualificationPage() {
     <div className="mb-16 sm:mb-20">
       <button type="button" aria-expanded={tableExpanded} aria-controls="qualificacao-tabela-painel" onClick={() => setTableExpanded(!tableExpanded)}
         className="group mx-auto mt-8 flex cursor-pointer flex-col items-center rounded-lg px-4 py-3 text-center focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
-        <span className="grid size-16 place-items-center rounded-full bg-background text-teal-700">
+        <span className="grid size-16 place-items-center rounded-full bg-background text-profile-icon">
           <TableProperties strokeWidth={1.25} className="size-11 motion-safe:transition-transform motion-safe:group-hover:scale-110" aria-hidden="true" />
         </span>
         <span className="mt-3 text-base font-semibold">Tabelas</span>
         <span className="mt-2 max-w-48 text-sm leading-6 text-muted-foreground">Consulte os percentuais de incentivo por nível de escolaridade.</span>
-        <ChevronDown className={`mt-3 size-4 text-teal-700 motion-safe:transition-transform ${tableExpanded ? 'rotate-180' : ''}`} aria-hidden="true" />
+        <ChevronDown className={`mt-3 size-4 text-profile-icon motion-safe:transition-transform ${tableExpanded ? 'rotate-180' : ''}`} aria-hidden="true" />
       </button>
       <div id="qualificacao-tabela-painel" hidden={!tableExpanded} className="mt-6 rounded-xl border border-slate-200 bg-white p-4 text-left text-base leading-7 sm:p-6">
         <h3 id="qualificacao-tabela" className="font-semibold text-primary">Tabela de percentuais</h3>

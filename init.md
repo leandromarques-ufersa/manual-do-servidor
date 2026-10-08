@@ -357,3 +357,15 @@ Pedido confirmado: título, parágrafo e lista de “Como funciona?” alinhados
 - Repositório: `leandromarques-ufersa/manual-do-servidor`, branch `main`.
 - Publicação via GitHub Actions, com build do Vite em `dist/`.
 - Endereço: https://leandromarques-ufersa.github.io/manual-do-servidor/
+
+### Guia docente · 8 de outubro de 2026
+
+- Mesmas seis seções, cartões, ações de página e navegação lateral do guia técnico, mantendo URLs no perfil `docente`.
+- Carreira docente possui seis tópicos próprios. Eles, Orientações iniciais, Licenças e afastamentos e Serviços exibem “Estamos trabalhando nisso.” até receberem conteúdo.
+- Saúde e Benefícios reutilizam os componentes de conteúdo dos técnicos; os cartões e retornos preservam o perfil e a seção de origem.
+
+### Cores de interação por categoria · 8 de outubro de 2026
+
+- Guia docente: azul nos ícones de navegação, marcadores de listas, controles de tabelas, ícones dos cartões e ações “Saiba mais”; fundos circulares em azul claro.
+- Guia técnico: manter os tons verdes existentes nesses elementos. Usar tokens compartilhados `profile-*`, definidos pelo perfil da página, inclusive nos conteúdos reutilizados.
+- Preservar tipografia, fundo, textos, espaçamento e demais diretivas. Botões oficiais permanecem pretos; avisos mantêm azul para Observação e âmbar para Atenção. Indicadores semânticos de sim/não nas tabelas e controles explicativos vermelhos mantêm suas cores.

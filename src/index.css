@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @theme inline {
+  --color-profile-accent: var(--profile-accent);
+  --color-profile-strong: var(--profile-strong);
+  --color-profile-soft: var(--profile-soft);
+  --color-profile-selected: var(--profile-selected);
+  --color-profile-icon: var(--profile-icon);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -91,5 +96,22 @@
   .check-list-subicon {
     left: var(--list-subicon-left, 0.25rem);
     right: var(--list-subicon-right, auto);
+  }
+}
+
+@layer base {
+  :root {
+    --profile-accent: #047857;
+    --profile-strong: #065f46;
+    --profile-soft: #ecfdf5;
+    --profile-selected: #d1fae5;
+    --profile-icon: #0f766e;
+  }
+  [data-profile="docente"] {
+    --profile-accent: #1d4ed8;
+    --profile-strong: #1e40af;
+    --profile-soft: #eff6ff;
+    --profile-selected: #dbeafe;
+    --profile-icon: #1d4ed8;
   }
 }

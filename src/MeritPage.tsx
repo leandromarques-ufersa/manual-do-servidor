@@ -18,12 +18,12 @@ export function MeritPage() {
     </section>
     <div className="mb-16 flex justify-center sm:mb-20">
       <ExternalLink href="https://progepe.ufersa.edu.br/wp-content/uploads/sites/62/2025/04/TABELA_TAES_MP_1286_2024.pdf" className="group flex flex-col items-center rounded-lg px-4 py-3 text-center focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
-        <span className="grid size-16 place-items-center rounded-full bg-background text-teal-700">
+        <span className="grid size-16 place-items-center rounded-full bg-background text-profile-icon">
           <TableProperties strokeWidth={1.25} className="size-11 motion-safe:transition-transform motion-safe:group-hover:scale-110" aria-hidden="true" />
         </span>
         <span className="mt-3 text-base font-semibold">Tabelas</span>
         <span className="mt-2 max-w-48 text-sm leading-6 text-muted-foreground">Consulte a Tabela de Progressão do PCCTAE.</span>
-        <ArrowUpRight className="mt-3 size-4 text-teal-700" aria-hidden="true" />
+        <ArrowUpRight className="mt-3 size-4 text-profile-icon" aria-hidden="true" />
       </ExternalLink>
     </div>
     <section className="probation-section" aria-labelledby="merito-solicitacao">

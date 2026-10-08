@@ -33,10 +33,10 @@ export function DependentsPage() {
     </section>
     <div className="mb-16 sm:mb-20">
       <button type="button" aria-expanded={tableExpanded} aria-controls="dependentes-tabela-painel" onClick={() => setTableExpanded(!tableExpanded)} className="group mx-auto flex cursor-pointer flex-col items-center rounded-lg px-4 py-3 text-center focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
-        <span className="grid size-16 place-items-center rounded-full bg-background text-teal-700"><TableProperties strokeWidth={1.25} className="size-11 motion-safe:transition-transform motion-safe:group-hover:scale-110" aria-hidden="true" /></span>
+        <span className="grid size-16 place-items-center rounded-full bg-background text-profile-icon"><TableProperties strokeWidth={1.25} className="size-11 motion-safe:transition-transform motion-safe:group-hover:scale-110" aria-hidden="true" /></span>
         <span className="mt-3 text-base font-semibold">Tabelas</span>
         <span className="mt-2 max-w-48 text-sm leading-6 text-muted-foreground">Dependentes × Benefícios</span>
-        <ChevronDown className={`mt-3 size-4 text-teal-700 ${tableExpanded ? 'rotate-180' : ''}`} aria-hidden="true" />
+        <ChevronDown className={`mt-3 size-4 text-profile-icon ${tableExpanded ? 'rotate-180' : ''}`} aria-hidden="true" />
       </button>
       <div id="dependentes-tabela-painel" hidden={!tableExpanded} className="mt-6 rounded-xl border border-slate-200 bg-white p-6 text-left">
         <h3 className="mb-3 text-xl font-semibold">Tabela de Dependentes × Benefícios</h3>
