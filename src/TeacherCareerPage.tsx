@@ -11,6 +11,6 @@ export const teacherCareerTopics = [
 ]
 export function TeacherCareerPage() {
   return <nav aria-label="Tópicos da carreira docente" className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6">
-    {teacherCareerTopics.map(topic => <SelectionCard key={topic.id} {...topic} description="Estamos trabalhando nisso." href={`#docente/carreira/${topic.id}`} green />)}
+    {teacherCareerTopics.map(topic => <SelectionCard key={topic.id} {...topic} description={topic.id === 'estagio' ? 'Conheça as avaliações, os documentos e as solicitações junto à CAD e à CPPD.' : topic.id === 'progressao' ? 'Veja os prazos e os documentos para solicitar sua avaliação à CPPD.' : topic.id === 'titular' ? 'Confira os requisitos, a defesa e os documentos para solicitar sua promoção.' : topic.id === 'revisao' ? 'Saiba como reunir seu histórico e solicitar a revisão das progressões à CPPD.' : topic.id === 'aceleracao' ? 'Consulte as condições para aprovação no estágio anterior a 01/01/2025.' : topic.id === 'titulacao' ? 'Saiba como solicitar a RT e comprovar sua titulação junto à CPPD.' : 'Estamos trabalhando nisso.'} href={`#docente/carreira/${topic.id}`} green />)}
   </nav>
 }

@@ -369,3 +369,39 @@ Pedido confirmado: título, parágrafo e lista de “Como funciona?” alinhados
 - Guia docente: azul nos ícones de navegação, marcadores de listas, controles de tabelas, ícones dos cartões e ações “Saiba mais”; fundos circulares em azul claro.
 - Guia técnico: manter os tons verdes existentes nesses elementos. Usar tokens compartilhados `profile-*`, definidos pelo perfil da página, inclusive nos conteúdos reutilizados.
 - Preservar tipografia, fundo, textos, espaçamento e demais diretivas. Botões oficiais permanecem pretos; avisos mantêm azul para Observação e âmbar para Atenção. Indicadores semânticos de sim/não nas tabelas e controles explicativos vermelhos mantêm suas cores.
+
+### Orientações iniciais docentes · 8 de outubro de 2026
+
+- Reutilizar o conteúdo de Orientações iniciais dos técnicos para docentes, omitindo apenas a seção “Quando poderei bater o ponto?”.
+- Manter a navegação e as cores do perfil docente. Esta decisão substitui o aviso de conteúdo em preparação nessa seção.
+
+### Estágio Probatório Docente · 8 de outubro de 2026
+
+- Página própria com o conteúdo fornecido, orientações para CAD e CPPD, listas com marcadores azuis e links externos em nova aba.
+- Preservar as três seções e o botão oficial preto. Substitui o aviso de conteúdo em preparação para este tópico docente.
+
+### Progressão por Desempenho Docente · 8 de outubro de 2026
+
+- Resumo prático baseado em https://cppd.ufersa.edu.br/progressao-por-desempenho/, consultada em 8 de outubro de 2026.
+- Usar as seções “O que é?”, “Como funciona?” e “Como solicito minha progressão?”, mantendo detalhes e modelos na fonte oficial.
+- Preservar a identidade docente, listas padronizadas e links em nova aba. Não aplicar uma pontuação única a todas as jornadas ou períodos.
+
+### Promoção para Titular · 8 de outubro de 2026
+
+- Resumo prático baseado em https://cppd.ufersa.edu.br/promocao-para-titular/, consultada em 8 de outubro de 2026.
+- Apresentar requisitos, prazo e quatro arquivos da solicitação; remeter modelos e regras detalhadas à CPPD. Manter identidade docente e botão oficial preto.
+
+### Revisão de Progressão Funcional · 8 de outubro de 2026
+
+- Resumo prático baseado em https://cppd.ufersa.edu.br/revisao-de-progressao-funcional/, consultada em 8 de outubro de 2026.
+- Destacar histórico de progressões, documentos por período e limite financeiro de cinco anos; manter modelos e detalhes na fonte oficial e a identidade docente.
+
+### Aceleração da Promoção docente · 8 de outubro de 2026
+
+- Resumo baseado em https://cppd.ufersa.edu.br/aceleracao-da-promocao-por-estagio-probatorio/, consultada em 8 de outubro de 2026.
+- Destacar a aplicação à aprovação no estágio anterior a 01/01/2025 e a orientação da CPPD para progressão por desempenho nos casos posteriores. Preservar aviso âmbar, identidade docente e links oficiais.
+
+### Retribuição por Titulação · 8 de outubro de 2026
+
+- Resumo baseado em https://cppd.ufersa.edu.br/retribuicao-por-titulacao/, consultada em 8 de outubro de 2026.
+- Identidade docente, três seções, documentos e orientação expansível para solicitação sem diploma. Efeitos financeiros vinculados ao processo devidamente instruído.

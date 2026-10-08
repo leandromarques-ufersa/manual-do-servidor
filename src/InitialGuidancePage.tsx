@@ -5,7 +5,7 @@ import { Notice } from '@/components/Notice'
 const headingStyle = 'mb-6 scroll-mt-8 text-2xl font-medium tracking-tight sm:text-3xl'
 const linkStyle = 'text-primary underline decoration-primary/40 underline-offset-4 hover:decoration-primary'
 
-export function InitialGuidancePage() {
+export function InitialGuidancePage({ showAttendance = true }: { showAttendance?: boolean }) {
   return <div className="probation-minimal mt-8 border-t border-slate-300 pt-12 text-base leading-8 sm:pt-16 sm:text-lg sm:leading-9">
     <section className="probation-section" aria-labelledby="inicio-siape">
       <h2 id="inicio-siape" tabIndex={-1} className={headingStyle}>Como consigo minha Matrícula Siape?</h2>
@@ -31,9 +31,9 @@ export function InitialGuidancePage() {
       <h2 id="inicio-sistemas" tabIndex={-1} className={headingStyle}>Quando terei acesso aos Sistemas Integrados de Gestão (Sipac, Sigrh e Sigaa)?</h2>
       <p>Assim que sua matrícula Siape estiver ativa, você poderá realizar seu cadastro através do link: <ExternalLink className={linkStyle} href="https://sso.ufersa.edu.br/sso-server/login?service=https%3A%2F%2Fsigrh.ufersa.edu.br%2Fsigrh%2Flogin%2Fcas">Sistemas Integrados de Gestão</ExternalLink>.</p>
     </section>
-    <section className="probation-section" aria-labelledby="inicio-frequencia">
+    {showAttendance && <section className="probation-section" aria-labelledby="inicio-frequencia">
       <h2 id="inicio-frequencia" tabIndex={-1} className={headingStyle}>Quando poderei bater o ponto?</h2>
       <p>Assim que realizar seu cadastro no Sigrh, poderá ter acesso ao <ExternalLink className={linkStyle} href="https://sigrh.ufersa.edu.br/sigrh/public/home.jsf">Registro de Frequência</ExternalLink>.</p>
-    </section>
+    </section>}
   </div>
 }
