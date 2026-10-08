@@ -351,3 +351,9 @@ Pedido confirmado: título, parágrafo e lista de “Como funciona?” alinhados
 
 - Exibir ações no canto superior direito de todas as páginas: Compartilhar copia a URL completa com o hash da página, com confirmação acessível e alternativa de cópia manual.
 - Dúvidas abre o aplicativo de e-mail para `rhangicos@ufersa.com.br`, endereço informado pelo responsável, com assunto e link da página. Não envia mensagens automaticamente.
+
+### GitHub Pages · 8 de outubro de 2026
+
+- Repositório: `leandromarques-ufersa/manual-do-servidor`, branch `main`.
+- Publicação via GitHub Actions, com build do Vite em `dist/`.
+- Endereço: https://leandromarques-ufersa.github.io/manual-do-servidor/

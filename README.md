@@ -24,7 +24,9 @@ O build verifica TypeScript e gera `dist/`. Caminhos relativos e navegação por
 
 ## GitHub Pages
 
-Em Settings → Pages, selecione **GitHub Actions** como origem. O workflow `.github/workflows/pages.yml` compila e publica a branch `main`; ajuste o nome da branch se necessário. Também pode ser executado manualmente. Nenhuma publicação remota foi realizada nesta alteração.
+Em Settings → Pages, selecione **GitHub Actions** como origem. O workflow `.github/workflows/pages.yml` compila e publica a branch `main`; ajuste o nome da branch se necessário. Também pode ser executado manualmente. Repositório: https://github.com/leandromarques-ufersa/manual-do-servidor
+
+Endereço público: https://leandromarques-ufersa.github.io/manual-do-servidor/
 
 ## Manutenção
 
