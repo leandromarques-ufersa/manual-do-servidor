@@ -405,3 +405,54 @@ Pedido confirmado: título, parágrafo e lista de “Como funciona?” alinhados
 
 - Resumo baseado em https://cppd.ufersa.edu.br/retribuicao-por-titulacao/, consultada em 8 de outubro de 2026.
 - Identidade docente, três seções, documentos e orientação expansível para solicitação sem diploma. Efeitos financeiros vinculados ao processo devidamente instruído.
+
+### Orientações iniciais independentes por categoria · 9 de outubro de 2026
+
+- TAEs utilizam `InitialGuidancePage`; docentes utilizam `TeacherInitialGuidancePage`, com conteúdo independente para permitir diferenças futuras.
+- Ambas começam com o conteúdo completo igual, incluindo “Quando poderei bater o ponto?”, sem a propriedade `showAttendance`.
+- Preservar URLs, navegação, componentes visuais compartilhados e cores herdadas de cada perfil.
+- Esta decisão substitui o compartilhamento anterior da página e a omissão da seção de frequência para docentes.
+
+### Auxílio Transporte · 9 de outubro de 2026
+
+- Página única `TransportAllowancePage` compartilhada entre TAEs e docentes, com cores herdadas do perfil.
+- Orientações resumidas de definição, funcionamento, solicitação, atualização e cancelamento, com links oficiais da PROGEPE e do SouGov.
+- Calculadora expansível baseada na planilha da PROGEPE de julho/2025: custo diário × dias − (vencimento básico / 30 × dias × 6%), limitada a zero. Valores estimados, sujeitos à análise da Gestão de Pessoas.
+
+### Tutorial visual do Auxílio Transporte · 9 de outubro de 2026
+
+- Carrossel compartilhado com nove telas reais do tutorial oficial do SouGov, armazenadas em `assets/sougov-transporte`, com origem documentada.
+- Navegação manual por botões, etapas numeradas e setas do teclado; imagens ampliáveis em diálogo acessível. Sem avanço automático.
+- Inserido na seção de solicitação, com controles nas cores do perfil e link para a fonte oficial.
+
+### Tutoriais de atualização e cancelamento · 9 de outubro de 2026
+
+- Reutilizar `TransportTutorial` nas três operações, com estado independente, setas laterais, etapas numeradas e ampliação.
+- Atualização: sete etapas; cancelamento: duas etapas, após o login. Imagens provenientes dos PDFs oficiais da PROGEPE, com fonte no próprio carrossel.
+- Páginas horizontais dos PDFs usam a largura do carrossel, com a descrição abaixo para facilitar a leitura.
+
+### Padrão reutilizável de passo a passo SouGov · 9 de outubro de 2026
+
+- Utilizar `SouGovTutorial` como componente visual comum; manter dados, textos e imagens de cada serviço nos componentes de conteúdo (`TransportTutorial` e `HealthTutorial`).
+- Após o título da seção, apresentar uma introdução curta seguida do carrossel; incluir a fonte oficial no rodapé do próprio tutorial, sem repetir o link abaixo.
+- Usar capturas reais de fontes oficiais, armazenadas localmente e com origem documentada no README dos assets. Não criar telas fictícias.
+- Cartão branco com borda e cantos arredondados; imagem sobre fundo claro, setas ‹ e › nas laterais, título e instrução curta por etapa, indicador “Passo X de Y” e seleção por números.
+- Em telas verticais, imagem e descrição lado a lado no desktop e empilhadas no celular. Páginas horizontais usam a largura do cartão e descrição abaixo.
+- Permitir ampliação em diálogo acessível, navegação por teclado e fechamento com Escape. Sem avanço automático. Desabilitar a seta anterior no início e a seguinte no fim; cada carrossel mantém seu estado independente.
+- Herdar as cores do perfil: azul docente e verde TAE. Preservar as cores originais das capturas.
+
+### Saúde suplementar — tutoriais SouGov · 9 de outubro de 2026
+
+- Acrescentar seções de solicitação, atualização e cancelamento, nessa ordem, com telas dos respectivos tutoriais oficiais do Portal do Servidor.
+- Reutilizar o padrão SouGov e o conteúdo único para docentes e TAEs, tanto no acesso por Saúde quanto por Benefícios.
+- Renomear a seção de comprovação para “Como comprovo minha assistência à saúde suplementar?” e mantê-la como última seção de orientações, antes do link institucional final. Preservar o conteúdo de comprovação existente.
+
+### Tutorial de envio de atestados · 9 de outubro de 2026
+
+- Inserir `MedicalCertificateTutorial` em “Como apresentar meus atestados?”, reutilizando `SouGovTutorial`, com dez etapas e capturas oficiais armazenadas em `assets/sougov-atestados`.
+- Preservar o prazo e o aviso existentes; manter o conteúdo compartilhado entre docentes e TAEs, com cores herdadas do perfil.
+
+### Tutoriais de dependentes · 9 de outubro de 2026
+
+- Inclusão: oito etapas em “Como posso incluir meus dependentes?”. Exclusão: seção “Como posso excluir um dependente?”, com acesso ao serviço e seleção da lixeira, conforme as telas disponíveis no tutorial oficial.
+- Reutilizar `SouGovTutorial` com navegação independente, cores por perfil e capturas oficiais em `assets/sougov-dependentes`. Não inventar telas de confirmação ausentes na fonte.

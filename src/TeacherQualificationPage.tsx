@@ -3,6 +3,7 @@ import { ExternalLink } from '@/components/ExternalLink'
 import { ExpandableInformation } from '@/components/ExpandableInformation'
 import { CheckList, CheckListItem } from '@/components/CheckList'
 import { Button } from '@/components/ui/button'
+import { Notice } from '@/components/Notice'
 
 const headingStyle = 'mb-6 scroll-mt-8 text-2xl font-medium tracking-tight sm:text-3xl'
 const linkStyle = 'text-primary underline decoration-primary/40 underline-offset-4 hover:decoration-primary'
@@ -18,6 +19,9 @@ export function TeacherQualificationPage() {
       <h2 id="rt-funcionamento" tabIndex={-1} className={headingStyle}>Como funciona?</h2>
       <p>Solicite ao ingressar na carreira ou ao obter titulação superior. Os efeitos financeiros começam com a abertura do processo <strong>devidamente instruído</strong>, não com a defesa ou emissão do diploma.</p>
       <p className="mt-6">Títulos estrangeiros devem estar revalidados por instituição nacional competente.</p>
+      <div className="mt-6"><Notice variant="attention">
+        <p>A retribuição por titulação é paga somente mediante publicação de portaria, retroativa a data de solicitação do pedido, válido também para aqueles docentes que estão ingressando no órgão, portanto, após assinar o Termo de Exercício, o docente deve requerer sua RT, o mais breve possível.</p>
+      </Notice></div>
     </section>
     <section className="probation-section" aria-labelledby="rt-solicitacao">
       <h2 id="rt-solicitacao" tabIndex={-1} className={headingStyle}>Como solicito minha retribuição?</h2>

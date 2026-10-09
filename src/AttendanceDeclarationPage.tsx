@@ -35,8 +35,11 @@ export function AttendanceDeclarationPage() {
       </Notice></div>
     </section>
     <section className="probation-section ml-auto text-right" aria-labelledby="comparecimento-apresentacao">
-      <h2 id="comparecimento-apresentacao" tabIndex={-1} className={headingStyle}>Como Apresentar?</h2>
-      <p>O servidor poderá incluir sua declaração de comparecimento, como documento comprobatório na justificativa do seu ponto, utilizando a opção <strong>“Declaração de Comparecimento”</strong>.</p>
+      <h2 id="comparecimento-apresentacao" tabIndex={-1} className={headingStyle}>Como devo apresentar minha Declaração de Comparecimento?</h2>
+      <h3 className="mb-3 text-xl font-semibold">Técnicos Administrativos</h3>
+      <p>O servidor técnico deve incluir sua declaração de comparecimento, como documento comprobatório na justificativa do seu ponto eletrônico, utilizando a opção <strong>“Declaração de Comparecimento”</strong>.</p>
+      <h3 className="mt-8 mb-3 text-xl font-semibold">Docentes</h3>
+      <p>O servidor docente deve apresentar sua declaração de comparecimento diretamente ao departamento no qual está lotado.</p>
     </section>
     <div className="border-t border-slate-200 pt-8">
       <p className="text-base leading-8 text-muted-foreground">Para maiores informações consulte a página oficial da Declaração de Comparecimento:</p>

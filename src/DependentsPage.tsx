@@ -1,3 +1,4 @@
+import { DependentsTutorial } from '@/components/DependentsTutorial'
 import { useState } from 'react'
 import { ArrowUpRight, TableProperties, ChevronDown, Check, X } from 'lucide-react'
 import { ExternalLink } from '@/components/ExternalLink'
@@ -73,7 +74,13 @@ export function DependentsPage() {
     </div>
     <section className="probation-section" aria-labelledby="dependentes-inclusao">
       <h2 id="dependentes-inclusao" tabIndex={-1} className={headingStyle}>Como posso incluir meus dependentes?</h2>
-      <p>Para incluir dependentes em seu assentamento funcional, o servidor deve utilizar o aplicativo <ExternalLink className="text-primary underline decoration-primary/40 underline-offset-4 hover:decoration-primary" href="https://www.gov.br/servidor/pt-br/acesso-a-informacao/faq/sou-gov.br/cadastrar-dependentes/cadastrar-dependente">Sougov</ExternalLink>.</p>
+      <p>Inclua seus dependentes no SouGov conforme o passo a passo:</p>
+      <DependentsTutorial kind="include" />
+    </section>
+    <section className="probation-section ml-auto text-right" aria-labelledby="dependentes-exclusao">
+      <h2 id="dependentes-exclusao" tabIndex={-1} className={headingStyle}>Como posso excluir um dependente?</h2>
+      <p>Para excluir um registro do cadastro de dependentes, acesse o SouGov e siga o passo a passo:</p>
+      <DependentsTutorial kind="exclude" />
     </section>
     <div className="border-t border-slate-200 pt-8">
       <p className="text-base leading-8 text-muted-foreground">Para maiores informações consulte a página oficial da inclusão de dependentes:</p>

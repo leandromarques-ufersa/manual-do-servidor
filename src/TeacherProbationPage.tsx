@@ -26,14 +26,14 @@ export function TeacherProbationPage() {
         <CheckListItem><ExternalLink className={linkStyle} href="https://progepe.ufersa.edu.br/wp-content/uploads/sites/62/2018/09/Formul%C3%A1rio-para-Solicita%C3%A7%C3%A3o-de-Abertura-de-Processo-de-Avaliacao-de-Estagio-Probatorio.docx">Formulário para Solicitação de Abertura de Processo de Avaliação de Estágio Probatório</ExternalLink></CheckListItem>
         <CheckListItem>Avaliação do docente pelo discente referente aos semestres 201x.x e 201x.x</CheckListItem>
       </CheckList>
-      <p className="mt-8">A partir daí, nos próximos <strong>12º, 24º e 36º meses</strong>, o docente deve realizar juntada dos documentos de cada interstício, encaminhando à sua unidade de Gestão de Pessoas:</p>
+      <p className="mt-8">A partir daí, nos próximos <strong>12º, 24º e 36º meses</strong>, o docente deve encaminhar para a CAD os documentos realativos a cada interstício:</p>
       <CheckList className="mt-6 space-y-6">
         <CheckListItem><ExternalLink className={linkStyle} href="https://progepe.ufersa.edu.br/wp-content/uploads/sites/62/2018/09/FORMUL%C3%81RIO-PARA-SOLICITA%C3%87%C3%83O-DE-JUNTADA-DE-DOCUMENTOS-EM-PROCESSO-DE-AVALIA%C3%87%C3%83O-DE-EST%C3%81GIO-PROBAT%C3%93RIO-DOCENTE.docx">Formulário para Solicitação de Juntada de Documentos</ExternalLink></CheckListItem>
         <CheckListItem>Avaliação do docente pelo discente referente aos semestres 201x.x e 201x.x</CheckListItem>
-        <CheckListItem>Demais documentos cabíveis.</CheckListItem>
+        <CheckListItem>Demais documentos cabíveis conforme legislação vigente.</CheckListItem>
       </CheckList>
       <h3 className="mt-10 mb-4 text-xl font-semibold">Solicitação junto à CPPD</h3>
-      <p>A cada <strong>12 meses de efetivo exercício</strong>, o docente deverá encaminhar à CPPD (<a className={linkStyle} href="mailto:cppd@ufersa.edu.br">cppd@ufersa.edu.br</a>), pedido de avaliação de seu estágio probatório, contendo:</p>
+      <p>A cada <strong>12 meses de efetivo exercício</strong>, o docente deve encaminhar à CPPD (<a className={linkStyle} href="mailto:cppd@ufersa.edu.br">cppd@ufersa.edu.br</a>), pedido de avaliação de seu estágio probatório, contendo:</p>
       <CheckList className="mt-6 space-y-6">
         <CheckListItem><ExternalLink className={linkStyle} href="https://cppd.ufersa.edu.br/avaliacao-durante-estagio-probatorio/">Consulte a documentação Necessária</ExternalLink></CheckListItem>
       </CheckList>

@@ -1,3 +1,4 @@
+import { MedicalCertificateTutorial } from '@/components/MedicalCertificateTutorial'
 import { CheckList, CheckListItem } from '@/components/CheckList'
 import { Notice } from '@/components/Notice'
 import { ArrowUpRight } from 'lucide-react'
@@ -24,6 +25,7 @@ export function MedicalCertificatesPage() {
     <section className="probation-section text-right" aria-labelledby="atestados-envio">
       <h2 id="atestados-envio" tabIndex={-1} className={headingStyle}>Como apresentar meus atestados?</h2>
       <p>O atestado deverá ser cadastrado através do aplicativo <ExternalLink className={linkStyle} href="https://www.gov.br/servidor/pt-br/acesso-a-informacao/faq/sou-gov.br/minha-saude/atestado/1-como-incluir-atestado-de-saude-no-aplicativo-sou-gov-br">SouGov</ExternalLink> no prazo máximo de <strong>5 (cinco) dias</strong> contados da data de início do afastamento do servidor.</p>
+      <MedicalCertificateTutorial />
       <div className="mt-6"><Notice variant="attention"><p>Nunca utilize seu atestado médico como documento comprobatório na justificativa do seu ponto eletrônico. Para essa finalidade, utilize a homologação do afastamento, emitida pelo SIASS ou por perito responsável.</p></Notice></div>
     </section>
     <section className="probation-section" aria-labelledby="atestados-pericia">

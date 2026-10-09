@@ -1,3 +1,4 @@
+import { HealthTutorial } from '@/components/HealthTutorial'
 import { CheckList, CheckListItem } from '@/components/CheckList'
 import { useState } from 'react'
 import { ExternalLink } from '@/components/ExternalLink'
@@ -84,8 +85,23 @@ export function SupplementaryHealthPage() {
       </div>
       </div>
     </div>
+    <section className="probation-section" aria-labelledby="assistencia-solicitacao">
+      <h2 id="assistencia-solicitacao" tabIndex={-1} className={headingStyle}>Como solicito minha assistência à saúde suplementar?</h2>
+      <p>Solicite sua assistência à saúde suplementar pelo SouGov conforme o passo a passo:</p>
+      <HealthTutorial kind="request" />
+    </section>
+    <section className="probation-section ml-auto text-right" aria-labelledby="assistencia-atualizacao">
+      <h2 id="assistencia-atualizacao" tabIndex={-1} className={headingStyle}>Como atualizo minha assistência à saúde suplementar?</h2>
+      <p>Atualize os dados do benefício no SouGov conforme o passo a passo:</p>
+      <HealthTutorial kind="update" />
+    </section>
+    <section className="probation-section" aria-labelledby="assistencia-cancelamento">
+      <h2 id="assistencia-cancelamento" tabIndex={-1} className={headingStyle}>Como cancelo minha assistência à saúde suplementar?</h2>
+      <p>Solicite o encerramento do benefício no SouGov conforme o passo a passo:</p>
+      <HealthTutorial kind="cancel" />
+    </section>
     <section className="probation-section" aria-labelledby="assistencia-comprovacao">
-      <h2 id="assistencia-comprovacao" tabIndex={-1} className={headingStyle}>Como devo Comprovar?</h2>
+      <h2 id="assistencia-comprovacao" tabIndex={-1} className={headingStyle}>Como comprovo minha assistência à saúde suplementar?</h2>
       <p>Para os servidores que optarem pela modalidade ressarcimento (a modalidade convênio é dispensada de comprovação), é exigida comprovação anual de gastos, por meio da apresentação de declaração da operadora ou administradora de benefícios, discriminando valor mensal por beneficiário, bem como atestando sua quitação.</p>
       <p className="mt-6">Essa comprovação é de responsabilidade do Setor de Pagamentos da Progepe, que anualmente envia comunicado aos servidores, através de email institucional, indicando as instruções para apresentação das declarações de quitação.</p>
     </section>
