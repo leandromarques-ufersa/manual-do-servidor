@@ -60,9 +60,8 @@ export default function App() {
     <header className="border-b bg-white">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-5 sm:px-10">
         <a href="#perfis" aria-label="UFERSA — início"><img src={logo} alt="UFERSA" width={2172} height={724} className="h-auto w-36 sm:w-40" /></a>
-        <nav aria-label="Bibliotecas utilizadas" className="flex items-center gap-1 text-muted-foreground">
-          <Button variant="ghost" size="sm" asChild><ExternalLink href="https://tailwindcss.com/">Tailwind CSS<ArrowUpRight aria-hidden="true" /></ExternalLink></Button>
-          <Button variant="ghost" size="sm" asChild><ExternalLink href="https://ui.shadcn.com/">shadcn/ui<ArrowUpRight aria-hidden="true" /></ExternalLink></Button>
+        <nav aria-label="Visualização do site" className="flex items-center gap-1 text-muted-foreground">
+          <Button variant="ghost" size="sm" asChild><ExternalLink href="https://leandromarques-ufersa.github.io/manual-do-servidor/">Visualizar em Tela Cheia<ArrowUpRight aria-hidden="true" /></ExternalLink></Button>
         </nav>
       </div>
     </header>
