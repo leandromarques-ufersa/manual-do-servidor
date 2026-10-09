@@ -18,7 +18,7 @@ export function TeacherProbationPage() {
       <p className="mt-6">A cada 12 meses de efetivo exercício, o servidor deve protocolar pedido de análise de seu estágio probatório tanto junto à Comissão de Avaliação Docente (CAD) de sua unidade, quanto à Comissão Permanente de Pessoal Docente (CPPD).</p>
     </section>
     <section className="probation-section" aria-labelledby="docente-estagio-solicitacao">
-      <h2 id="docente-estagio-solicitacao" tabIndex={-1} className={headingStyle}>Como solicito minha estabilidade?</h2>
+      <h2 id="docente-estagio-solicitacao" tabIndex={-1} className={headingStyle}>Como solicito minha analise do meu Estágio Probatório?</h2>
       <h3 className="mb-4 text-xl font-semibold">Solicitação junto à CAD</h3>
       <p>Ao completar <strong>8 meses de efetivo exercício</strong>, o docente deve protocolar processo administrativo, junto à DIAP ou à sua unidade de Gestão de Pessoas, requerendo análise de seu estágio probatório, contendo:</p>
       <CheckList className="mt-6 space-y-6">
